@@ -1,0 +1,28 @@
+{
+  "name": "cucumber-webdriverio",
+  "version": "1.0.0",
+  "description": "An end to end test automation framework built using cucumberjs and webdriverio",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/apaag/cucumber-webdriverio.git"
+  },
+  "keywords": [
+    "bdd",
+    "webdriverio",
+    "cucumberjs"
+  ],
+  "author": "aparna.vadakath@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/apaag/cucumber-webdriverio/issues"
+  },
+  "homepage": "https://github.com/apaag/cucumber-webdriverio#readme",
+  "devDependencies": {
+    "wdio-cucumber-framework": "^2.2.3",
+    "webdriverio": "^4.13.2"
+  }
+}
