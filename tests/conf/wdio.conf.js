@@ -59,7 +59,7 @@ exports.config = {
     sync: true,
     //
     // Level of logging verbosity: silent | verbose | command | data | result | error
-    logLevel: 'verbose',
+    logLevel: 'silent',
     //
     // Enables colors for log output.
     coloredLogs: true,
@@ -112,7 +112,7 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['selenium-standalone'],
+    // services: ['selenium-standalone'],
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: http://webdriver.io/guide/testrunner/frameworks.html
@@ -124,10 +124,13 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: http://webdriver.io/guide/reporters/dot.html
-    // reporters: ['dot'],//
+     reporters: ['spec'],//
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
-        require: ['tests/features/step_definitions/demo_steps.js'],        // <string[]> (file/dir) require files before executing features
+        require: ['tests/features/step_definitions/demo_steps.js',
+                  'tests/features/support/jsonReport.js',
+                  'tests/features/support/screenshot.js'],
+        // <string[]> (file/dir) require files before executing features
         backtrace: false,   // <boolean> show full backtrace for errors
         compiler: [],       // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
         dryRun: false,      // <boolean> invoke formatters without executing steps
@@ -205,8 +208,12 @@ exports.config = {
      * Runs after a Cucumber step
      * @param {Object} stepResult step result
      */
-    // afterStep: function (stepResult) {
-    // },
+     // afterStep: function (stepResult) {
+     //     if(stepResult.isFailed()){
+     //         console.log('I am here');
+     //         const screenshot = browser.saveScreenshot('./temp.png');
+     //     }
+     // },
     /**
      * Runs after a Cucumber scenario
      * @param {Object} scenario scenario details

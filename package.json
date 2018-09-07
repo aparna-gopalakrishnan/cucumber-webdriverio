@@ -22,7 +22,16 @@
   },
   "homepage": "https://github.com/apaag/cucumber-webdriverio#readme",
   "devDependencies": {
-    "wdio-cucumber-framework": "^2.2.3",
+    "cucumber": "^4.2.1",
+    "cucumber-html-reporter": "^4.0.4",
+    "fs-extra": "^7.0.0",
+    "gulp": "^3.9.1",
+    "gulp-sequence": "^1.0.0",
+    "gulp-webdriver": "^2.0.3",
+    "path": "^0.12.7",
+    "selenium-standalone": "^6.15.2",
+    "wdio-cucumber-framework": "1.1.0",
+    "wdio-spec-reporter": "^0.1.5",
     "webdriverio": "^4.13.2"
   }
 }
