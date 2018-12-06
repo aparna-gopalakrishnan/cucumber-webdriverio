@@ -19,10 +19,20 @@ defineSupportCode(function({registerListener}){
         const capabilities = global.browser.desiredCapabilities;
         const browserName = capabilities.browserName || 'unknown';
         const currentTime = new Date().toJSON().replace(/:/g, '-');
-        const reportsFolderPath = path.join(__dirname,'../../reports/json');
+        const reportsFolderPath = path.join(__dirname,'../../reports/');
+        const jsonReportPath = path.join(__dirname,'../../reports/');
+        const htmlFolderPath = path.join(__dirname,'../../reports/html');
+
 
         if(!fs.existsSync(reportsFolderPath)){
             fs.mkdirSync(reportsFolderPath);
+        }
+
+        if(!fs.existsSync(htmlFolderPath)){
+            fs.mkdirSync(htmlFolderPath);
+        }
+        if(!fs.existsSync(jsonReportPath)){
+            fs.mkdirSync(jsonReportPath);
         }
 
         const reportFileName = stripNonChars(`${browserName}-cucumber-test-results-${currentTime}-${Math.random()})`);
