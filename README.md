@@ -7,7 +7,7 @@ Instructions
 
 Pre-requisites
 1. NodeJS must be installed on the machine ( I have tested on node 6 & 8)
-2. GIT must be installed on the machine
+2. GIT must be installed on the machine (for Windows)
 
 Set up guilde
 1. Clone/download the project
