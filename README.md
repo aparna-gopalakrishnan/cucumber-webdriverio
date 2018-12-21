@@ -24,7 +24,7 @@ This is downloading required drivers from https://selenium-release.storage.googl
 8. To generate html reports, use gulp report. This will generate html reports and save in tests/reports/html folder
     we are using cucumber-html-reporter plugin to generate html report
     
- ---------------------------- Accessibility Testing with WebdriverIO and Cucumber-------------------------------
+ ---------------------------- Accessibility Testing with WebdriverIO and Cucumber--------------------------------------
  We can do accessibility testing with webdriverIO now with a utility - axe-webdriverIO
  Axe is an open source product from Deque and it works as a browser plugin and automated solution
  Axe-webdriverIO is a webdriverIO binding of axe-webdriverjs
