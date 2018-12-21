@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/apaag/cucumber-webdriverio#readme",
   "devDependencies": {
+    "axe-webdriverio": "^0.1.0",
     "cucumber": "^4.2.1",
     "cucumber-html-reporter": "^4.0.4",
     "fs-extra": "^7.0.0",

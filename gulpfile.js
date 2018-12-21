@@ -105,5 +105,17 @@ gulp.task('runTest', (done)=> {
             })
 });
 
+gulp.task('runAxe', (done)=> {
+    return gulp.src('tests/conf/accessibility.conf.js')
+        .pipe(webdriver()).
+        once('end', ()=> {
+            selenium.child? selenium.child.kill(): console.log('No selenium is running')
+        }).
+        on('error', ()=>{
+            done();
+        })
+});
+
 var gulpSequence = require('gulp-sequence');
 gulp.task('test',gulpSequence('selenium-start','runTest'));
+gulp.task('axe',gulpSequence('selenium-start','runAxe'));

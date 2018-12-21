@@ -20,7 +20,7 @@ defineSupportCode(function({registerListener}){
         const browserName = capabilities.browserName || 'unknown';
         const currentTime = new Date().toJSON().replace(/:/g, '-');
         const reportsFolderPath = path.join(__dirname,'../../reports/');
-        const jsonReportPath = path.join(__dirname,'../../reports/');
+        const jsonReportPath = path.join(__dirname,'../../reports/json');
         const htmlFolderPath = path.join(__dirname,'../../reports/html');
 
 
