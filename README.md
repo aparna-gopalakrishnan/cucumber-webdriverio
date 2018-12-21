@@ -23,3 +23,29 @@ This is downloading required drivers from https://selenium-release.storage.googl
 7. Once the execution is done, you will find json reports in tests/reports/json folder
 8. To generate html reports, use gulp report. This will generate html reports and save in tests/reports/html folder
     we are using cucumber-html-reporter plugin to generate html report
+    
+ ---------------------------- Accessibility Testing with WebdriverIO and Cucumber-------------------------------
+ We can do accessibility testing with webdriverIO now with a utility - axe-webdriverIO
+ Axe is an open source product from Deque and it works as a browser plugin and automated solution
+ Axe-webdriverIO is a webdriverIO binding of axe-webdriverjs
+ In this framework, we have created a configuration file for accessibility named accessibility.conf.js where accessibility feature file and step definitions can be configured.Also created a gulp task 'axe' to invoke accessibility configuration file and selenium tasks.
+ below code will do the axe core rules injection to the html and the same will be validated and provided the results-
+    return new axeBuilder(browser).withTags(['wcag2a','wcag2aa','wcag2aa']).analyze()
+            .then(function(results) {
+
+                axeViolations = results.value.violations.length;
+                report = results.value.violations;
+                //If any violation found, write the error into a json file, and mark the test as failed with error details
+                //Violation description will have description of the problem, rule id, what and where to fix in html
+                if (axeViolations > 0) {
+
+                    //Marking test as failed if any accessibility violation is found
+
+                    return Promise.reject(
+                        new Error(
+                            JSON.stringify(report, null, '\t'))
+
+                    );
+                }
+            });
+
